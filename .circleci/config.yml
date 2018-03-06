@@ -1,12 +1,16 @@
 version: 2
 jobs:
   build:
-
     macos:
       xcode: "9.2.0"
-
+    # For fix ruby error
+    shell: /bin/bash --login -eo pipefail
     steps:
       - checkout
+
+      - run:
+          name: Set Ruby Version
+          command:  echo "ruby-2.4" > ~/.ruby-version
 
       - restore_cache:
           keys:
