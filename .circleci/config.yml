@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  setup:
     macos:
       xcode: "9.2.0"
     working_directory: /Users/distiller/project
@@ -18,6 +18,7 @@ jobs:
       - restore_cache:
           keys:
           - v1-gems-{{ checksum "Gemfile.lock" }}
+          - v1-gems-
       - run:
           name: Install RubyGems
           command: bundle install --path vendor/bundle
@@ -28,6 +29,7 @@ jobs:
 
       - restore_cache:
           key: v1-pods-{{ checksum "Podfile.lock" }}
+          key: v1-pods-
       - run:
           name: Install CocoaPods
           command: |
@@ -37,6 +39,37 @@ jobs:
           key: v1-pods-{{ checksum "Podfile.lock" }}
           paths:
             - Pods
+
+  lint:
+    docker:
+      - image: dantoml/swiftlint:latest
+    steps:
+      - checkout
+      - run:
+          name: Lint by SwiftLint
+          command: swiftlint lint --reporter junit | tee result.xml
+      - store_artifacts:
+          path: result.xml
+      - store_test_results:
+          path: result.xml
+
+  scan:
+    macos:
+      xcode: "9.2.0"
+    working_directory: /Users/distiller/project
+    environment:
+      FL_OUTPUT_DIR: /Users/distiller/project/output
+    # For fix ruby error
+    shell: /bin/bash --login -eo pipefail
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-gems-{{ checksum "Gemfile.lock" }}
+          - v1-gems-
+      - restore_cache:
+          key: v1-pods-{{ checksum "Podfile.lock" }}
+          key: v1-pods-
 
       - run:
           name: Build and run tests
@@ -50,3 +83,15 @@ jobs:
           destination: output
       - store_test_results:
           path: /Users/distiller/project/output/scan
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - setup
+      - lint:
+          requires:
+            - setup
+      - scan:
+          requires:
+            - setup
