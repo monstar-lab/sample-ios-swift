@@ -1,0 +1,16 @@
+# reporter: json
+disabled_rules:
+  - todo # depends on your project
+excluded:
+  - Carthage
+  - Pods
+  - vendor
+line_length: 200
+function_body_length:
+  - 50 # depends on your project
+  - 100
+type_body_length:
+  - 300 # depends on your project
+  - 500
+identifier_name:
+  min_length: 1

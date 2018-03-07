@@ -11,3 +11,5 @@
 
 1. Share schemes.
 2. Install SwiftLint by `brew install swiftlint`.
+2. Set environment variable.
+    - `DANGER_GITHUB_API_TOKEN` : token for check bot
