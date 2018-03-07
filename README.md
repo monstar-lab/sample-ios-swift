@@ -13,3 +13,11 @@
 2. Install SwiftLint by `brew install swiftlint`.
 2. Set environment variable.
     - `DANGER_GITHUB_API_TOKEN` : token for check bot
+
+## Memo
+
+### Include `Pods` directory
+
+https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+
+I want to reduce build time in CircleCI.
