@@ -1,19 +1,23 @@
 version: 2
+
+defaults: &defaults
+  macos:
+    xcode: "9.2.0"
+  working_directory: /Users/distiller/project
+  environment:
+    FL_OUTPUT_DIR: /Users/distiller/project/output
+  # For fix ruby error
+  shell: /bin/bash --login -eo pipefail
+
 jobs:
   build:
-    macos:
-      xcode: "9.2.0"
-    working_directory: /Users/distiller/project
-    environment:
-      FL_OUTPUT_DIR: /Users/distiller/project/output
-    # For fix ruby error
-    shell: /bin/bash --login -eo pipefail
+    <<: *defaults
     steps:
       - checkout
 
       - run:
           name: Set Ruby Version
-          command:  echo "ruby-2.4" > ~/.ruby-version
+          command:  echo "ruby-2.4" > .ruby-version
 
       - restore_cache:
           keys:
@@ -46,3 +50,31 @@ jobs:
           destination: output
       - store_test_results:
           path: /Users/distiller/project/output/scan
+
+      - persist_to_workspace:
+          root: /Users/distiller/project
+          paths:
+            - .
+
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: /Users/distiller/project
+      - run:
+          name: Build ipa
+          command: bundle exec fastlane beta
+      - store_artifacts:
+          path: app.ipa
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

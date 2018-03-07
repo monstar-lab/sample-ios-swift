@@ -13,6 +13,7 @@
 2. Install SwiftLint by `brew install swiftlint`.
 2. Set environment variable.
     - `DANGER_GITHUB_API_TOKEN` : token for check bot
+    - `IOS_CERTIFICATES_KEY_PASSWORD` : password for p12 file
 
 ## Memo
 
