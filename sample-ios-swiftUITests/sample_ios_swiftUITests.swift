@@ -8,7 +8,9 @@
 
 import XCTest
 
+// swiftlint:disable type_name
 class sample_ios_swiftUITests: XCTestCase {
+    // swiftlint:enable type_name
         
     override func setUp() {
         super.setUp()
