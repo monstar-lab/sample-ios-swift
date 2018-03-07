@@ -41,14 +41,16 @@ platform :ios do
 
     `curl -OL https://developer.apple.com/certificationauthority/AppleWWDRCA.cer`
     import_certificate(
+      keychain_name: 'fastlane_tmp_keychain',
       certificate_path: 'certificates/dist.p12',
       certificate_password: ENV['IOS_CERTIFICATES_KEY_PASSWORD'],
       keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD'])
     import_certificate(
+      keychain_name: 'fastlane_tmp_keychain',
       certificate_path: 'fastlane/AppleWWDRCA.cer',
       keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD'])
 
-    Dir.glob('../*.mobileprovision').each {|filename|
+    Dir.glob('../certificates/*.mobileprovision').each {|filename|
       puts filename
       FastlaneCore::ProvisioningProfile.install(filename)
     }
