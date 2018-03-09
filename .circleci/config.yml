@@ -6,6 +6,8 @@ defaults: &defaults
   working_directory: /Users/distiller/project
   environment:
     FL_OUTPUT_DIR: /Users/distiller/project/output
+    GYM_OUTPUT_DIRECTORY: /Users/distiller/project/output
+    GYM_OUTPUT_NAME: app.ipa
   # For fix ruby error
   shell: /bin/bash --login -eo pipefail
 
@@ -65,7 +67,8 @@ jobs:
           name: Build ipa
           command: bundle exec fastlane beta
       - store_artifacts:
-          path: app.ipa
+          path: /Users/distiller/project/output
+          destination: output
 
 workflows:
   version: 2

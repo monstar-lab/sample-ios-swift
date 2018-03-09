@@ -25,7 +25,6 @@ platform :ios do
 
     build_app(
       scheme: SCHEME_DEV,
-      output_name: 'app.ipa',
       export_method: 'ad-hoc',
       export_options: {
         provisioningProfiles: {
