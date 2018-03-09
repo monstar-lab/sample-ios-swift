@@ -2,11 +2,15 @@
 
 ## What is this repository?
 
-- **Cocoapods**: Managing dependencies.
-- **fastlane**: Build and Deploy.
-- **SwiftLint**: Enforce Swift style and conventions.
-- **Manual signing**: Using `.p12` file / `.mobileprovision` file. (Don't use [match](https://docs.fastlane.tools/actions/match/))
+- **Lint**
+  - **SwiftLint**: Enforce Swift style and conventions.
+- **Manage dependencies**
+  - **Cocoapods**
+- **Build**
+  - **fastlane**: Build and Deploy.
+  - **Manual signing**: Using `.p12` file / `.mobileprovision` file. (Don't use [match](https://docs.fastlane.tools/actions/match/))
 - **CircleCI**: Lint, Test, and Build in [CircleCI](https://circleci.com/).
+- **PR Comment by Danger**: [Danger](http://danger.systems/ruby/) configuration is included. Lint error comes as PR comment.
 
 ## How to setup
 
