@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		45935FCB993EE696EE39F4E6 /* Pods_sample_ios_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEE1698DD08F54A3C8A36E3 /* Pods_sample_ios_swiftTests.framework */; };
+		512092942056817E00DF6991 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512092902056817E00DF6991 /* RxBlocking.framework */; };
+		512092952056817E00DF6991 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512092912056817E00DF6991 /* RxCocoa.framework */; };
+		512092962056817E00DF6991 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512092922056817E00DF6991 /* RxTest.framework */; };
+		512092972056817E00DF6991 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512092932056817E00DF6991 /* RxSwift.framework */; };
 		51F567AA204D2D25005A7970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F567A9204D2D25005A7970 /* AppDelegate.swift */; };
 		51F567AC204D2D25005A7970 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F567AB204D2D25005A7970 /* ViewController.swift */; };
 		51F567AF204D2D25005A7970 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51F567AD204D2D25005A7970 /* Main.storyboard */; };
@@ -39,6 +43,10 @@
 /* Begin PBXFileReference section */
 		002A5A6B41B1969056557551 /* Pods_sample_ios_swiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample_ios_swiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		329414CAF102AD8E8D5179E3 /* Pods_sample_ios_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample_ios_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		512092902056817E00DF6991 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		512092912056817E00DF6991 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		512092922056817E00DF6991 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		512092932056817E00DF6991 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		51F567A6204D2D25005A7970 /* sample-ios-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sample-ios-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51F567A9204D2D25005A7970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51F567AB204D2D25005A7970 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +75,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFA48CDDD449D91A79BBFEBC /* Pods_sample_ios_swift.framework in Frameworks */,
+				512092942056817E00DF6991 /* RxBlocking.framework in Frameworks */,
+				512092952056817E00DF6991 /* RxCocoa.framework in Frameworks */,
+				512092962056817E00DF6991 /* RxTest.framework in Frameworks */,
+				512092972056817E00DF6991 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +104,10 @@
 		4DF778C673807B3EAC98D546 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				512092902056817E00DF6991 /* RxBlocking.framework */,
+				512092912056817E00DF6991 /* RxCocoa.framework */,
+				512092932056817E00DF6991 /* RxSwift.framework */,
+				512092922056817E00DF6991 /* RxTest.framework */,
 				329414CAF102AD8E8D5179E3 /* Pods_sample_ios_swift.framework */,
 				8AEE1698DD08F54A3C8A36E3 /* Pods_sample_ios_swiftTests.framework */,
 				002A5A6B41B1969056557551 /* Pods_sample_ios_swiftUITests.framework */,
@@ -179,6 +195,7 @@
 				D87F9D805E47BBB41A3E585C /* [CP] Embed Pods Frameworks */,
 				E76616E88AD2B6C54E603912 /* [CP] Copy Pods Resources */,
 				51455B29204F7840006F08DC /* Run SwiftLint */,
+				5120928F2056805000DF6991 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -337,6 +354,27 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5120928F2056805000DF6991 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		51455B29204F7840006F08DC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -642,6 +680,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "sample-ios-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.monstar-lab.sample-ios-swift";
@@ -658,6 +701,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "sample-ios-swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.monstar-lab.sample-ios-swift";

@@ -22,6 +22,14 @@
 
 ## Memo
 
+### How to update Carthage dependencies
+
+Please run `carthage update --platform iOS --no-use-binaries --cache-builds`.
+And push `Carthage/Build`.
+
+(If you don't apply `--no-use-binaries`, some library create `Mac`, `tvOS`, `watchOS` directory in `Carthage/Build`.
+We don't want to include that to repository.)
+
 ### Signing setting
 
 **If you can use [match](https://docs.fastlane.tools/actions/match/) in your project, please use `match`.**
@@ -41,6 +49,15 @@ If you had error when building, please refer to [fastlane's doc](https://docs.fa
 https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 
 I want to reduce build time in CircleCI.
+
+### Include `Carthage/Build` directory
+
+- https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md
+- https://qiita.com/mono0926/items/636819c42e96a8c4e12d (Japanese)
+
+I want to reduce build time in CircleCI.
+
+But if you use too many/large libraries, you may ignore `Carthage/Build` from repository.
 
 ## Customize
 
