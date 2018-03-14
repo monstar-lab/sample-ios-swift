@@ -6,6 +6,8 @@ This is the sample continuous integrated project for iOS (Swift).
 
 ## What is this repository?
 
+- **Test**
+  - **XCTest**: (Only execute sample test code.)
 - **Lint**
   - **SwiftLint**: Enforce Swift style and conventions.
 - **Manage dependencies**
@@ -20,7 +22,7 @@ This is the sample continuous integrated project for iOS (Swift).
 ## How to setup
 
 1. Share schemes.
-2. Install some app.
+2. Install some app to your mac.
     - SwiftLint by `brew install swiftlint`.
     - Carthage by `brew install carthage`.
 3. Copy or refer to below files. [diff](https://github.com/noboru-i/sample-ios-swift/compare/195bec4bd798f9f3077f1f1ec6a481401cda1906...master)
@@ -33,7 +35,7 @@ This is the sample continuous integrated project for iOS (Swift).
     - `Podfile`
     - `certificates`: put `.p12` and `.mobileprovision` as your certificates. (If you can use `match`, please use `match`.)
     - `fastlane`: `Fastfile` has your build process. If you want to split config, please create you needed.
-4. Set environment variable.
+4. Set environment variable to CircleCI.
     - `DANGER_GITHUB_API_TOKEN` : token for check bot
     - `IOS_CERTIFICATES_KEY_PASSWORD` : password for p12 file
 
@@ -77,6 +79,13 @@ I want to reduce build time in CircleCI.
 I want to reduce build time in CircleCI.
 
 But if you use too many/large libraries, you may ignore `Carthage/Build` from repository.
+
+### Bitcode
+
+In this project, I disable bitcode.
+
+Because we usually create only iOS app.
+And some library not support bitcode.
 
 ## Customize
 
