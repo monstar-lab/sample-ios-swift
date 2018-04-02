@@ -1,6 +1,6 @@
 # Sample for iOS (Swift)
 
-[![CircleCI](https://circleci.com/gh/noboru-i/sample-ios-swift.svg?style=svg)](https://circleci.com/gh/noboru-i/sample-ios-swift)
+[![CircleCI](https://circleci.com/gh/monstar-lab/sample-ios-swift.svg?style=svg)](https://circleci.com/gh/monstar-lab/sample-ios-swift)
 
 This is the sample continuous integrated project for iOS (Swift).
 
@@ -25,7 +25,7 @@ This is the sample continuous integrated project for iOS (Swift).
 2. Install some app to your mac.
     - SwiftLint by `brew install swiftlint`.
     - Carthage by `brew install carthage`.
-3. Copy or refer to below files. [diff](https://github.com/noboru-i/sample-ios-swift/compare/195bec4bd798f9f3077f1f1ec6a481401cda1906...master)
+3. Copy or refer to below files. [diff](https://github.com/monstar-lab/sample-ios-swift/compare/195bec4bd798f9f3077f1f1ec6a481401cda1906...master)
     - `.circleci/config.yml`
     - `.gitignore`
     - `.swiftlint.yml`
@@ -93,5 +93,5 @@ This repository is targeting for very simple project.
 
 But in real world, we need to work for complex project.
 
-We have some advice for customizing configuration in [Wiki](https://github.com/noboru-i/sample-ios-swift/wiki).
+We have some advice for customizing configuration in [Wiki](https://github.com/monstar-lab/sample-ios-swift/wiki).
 Please refer to it.
