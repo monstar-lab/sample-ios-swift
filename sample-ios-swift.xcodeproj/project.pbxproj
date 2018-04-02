@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		45935FCB993EE696EE39F4E6 /* Pods_sample_ios_swiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AEE1698DD08F54A3C8A36E3 /* Pods_sample_ios_swiftTests.framework */; };
-		512092942056817E00DF6991 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512092902056817E00DF6991 /* RxBlocking.framework */; };
 		512092952056817E00DF6991 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512092912056817E00DF6991 /* RxCocoa.framework */; };
-		512092962056817E00DF6991 /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512092922056817E00DF6991 /* RxTest.framework */; };
 		512092972056817E00DF6991 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 512092932056817E00DF6991 /* RxSwift.framework */; };
 		51F567AA204D2D25005A7970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F567A9204D2D25005A7970 /* AppDelegate.swift */; };
 		51F567AC204D2D25005A7970 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F567AB204D2D25005A7970 /* ViewController.swift */; };
@@ -75,9 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFA48CDDD449D91A79BBFEBC /* Pods_sample_ios_swift.framework in Frameworks */,
-				512092942056817E00DF6991 /* RxBlocking.framework in Frameworks */,
 				512092952056817E00DF6991 /* RxCocoa.framework in Frameworks */,
-				512092962056817E00DF6991 /* RxTest.framework in Frameworks */,
 				512092972056817E00DF6991 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,16 +357,12 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxTest.framework",
 			);
 			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxBlocking.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
