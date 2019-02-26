@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         _ = observable
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { _ in
-                if (SVProgressHUD.isVisible()) {
+                if SVProgressHUD.isVisible() {
                     SVProgressHUD.dismiss()
                 } else {
                     SVProgressHUD.show(withStatus: "Sample iOS app")
