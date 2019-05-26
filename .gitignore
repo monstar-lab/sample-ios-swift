@@ -74,5 +74,3 @@ fastlane/test_output
 
 /.bundle/
 /vendor/bundle
-sample-ios-swift.xcodeproj/xcshareddata/xcschemes/sample-ios-swift.xcscheme
-sample-ios-swift.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
