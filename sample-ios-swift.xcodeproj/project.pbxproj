@@ -191,7 +191,7 @@
 				D87F9D805E47BBB41A3E585C /* [CP] Embed Pods Frameworks */,
 				51455B29204F7840006F08DC /* Run SwiftLint */,
 				5120928F2056805000DF6991 /* ShellScript */,
-				4204B898089A231EC3111C27 /* [CP] Copy Pods Resources */,
+				8450E2B14BDBE122B013CE13 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,8 +210,8 @@
 				51F567B6204D2D25005A7970 /* Sources */,
 				51F567B7204D2D25005A7970 /* Frameworks */,
 				51F567B8204D2D25005A7970 /* Resources */,
-				21C15A87AB9021D73E84C3C6 /* [CP] Embed Pods Frameworks */,
-				6EA9AFC3234A3777AADF3D16 /* [CP] Copy Pods Resources */,
+				04955F60B14ABE5B60DD56D1 /* [CP] Embed Pods Frameworks */,
+				72DD3C649EA8616215C796FD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,8 +231,8 @@
 				51F567C1204D2D25005A7970 /* Sources */,
 				51F567C2204D2D25005A7970 /* Frameworks */,
 				51F567C3204D2D25005A7970 /* Resources */,
-				3FB582A6CD31ADA4D85FFC59 /* [CP] Embed Pods Frameworks */,
-				5D052D07EEF67B2E712D6B00 /* [CP] Copy Pods Resources */,
+				01470E694B19125E85BF737E /* [CP] Embed Pods Frameworks */,
+				3BA9591AA33DDFFB52FFBD9C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,22 +321,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		21C15A87AB9021D73E84C3C6 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sample-ios-swiftTests/Pods-sample-ios-swiftTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3FB582A6CD31ADA4D85FFC59 /* [CP] Embed Pods Frameworks */ = {
+		01470E694B19125E85BF737E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -351,7 +336,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sample-ios-swiftUITests/Pods-sample-ios-swiftUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4204B898089A231EC3111C27 /* [CP] Copy Pods Resources */ = {
+		04955F60B14ABE5B60DD56D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sample-ios-swiftTests/Pods-sample-ios-swiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BA9591AA33DDFFB52FFBD9C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -363,7 +363,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sample-ios-swift/Pods-sample-ios-swift-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sample-ios-swiftUITests/Pods-sample-ios-swiftUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		48CBF0293D1C8B1605DD5BD3 /* [CP] Check Pods Manifest.lock */ = {
@@ -392,14 +392,16 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxRelay.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		51455B29204F7840006F08DC /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -415,22 +417,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		5D052D07EEF67B2E712D6B00 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sample-ios-swiftUITests/Pods-sample-ios-swiftUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6EA9AFC3234A3777AADF3D16 /* [CP] Copy Pods Resources */ = {
+		72DD3C649EA8616215C796FD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -443,6 +430,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sample-ios-swiftTests/Pods-sample-ios-swiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8450E2B14BDBE122B013CE13 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-sample-ios-swift/Pods-sample-ios-swift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD6C989FE0796943F99604CF /* [CP] Check Pods Manifest.lock */ = {
@@ -614,7 +616,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

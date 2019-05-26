@@ -18,6 +18,8 @@ DerivedData/
 *.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata
+*.xcworkspace/*
+!*.xcworkspace/xcshareddata
 xcuserdata
 
 ## Other
